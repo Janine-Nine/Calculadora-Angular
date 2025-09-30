@@ -1,0 +1,54 @@
+.calculadora {
+  width: 300px;
+  height: 350px;
+  background: #000;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+  margin: auto;
+}
+
+.tela {
+  background: #fff;
+  color: #000;
+  font-size: 2em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 15px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #333;
+}
+
+button.operador {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+button.operador:hover {
+  background: #ddd;
+}

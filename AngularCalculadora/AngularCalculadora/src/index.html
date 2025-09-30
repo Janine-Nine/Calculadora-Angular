@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Calculadora Angular App</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<header>
+        <h1>Calculadora Angular App</h1>
+<style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculadora {
+      width: 400px;
+      height: 550px;
+      background: #f60390;
+      border-radius: 10px;
+      display: grid;
+      grid-template-rows: 80px 4fr;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+    }
+
+    .tela {
+      background: #fff;
+      color: black;
+      font-size: 2em;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+    }
+
+    .botoes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      padding: 10px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 15px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    button.operador {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    button.operador:hover {
+      background: #ddd;
+    }
+</style>
+</head>
+<body>    
+ <div class="calculadora">
+  <input type="text" [value]="display" readonly>
+  <div class="botoes">
+   <button (click)="pressFunction('sqrt')">√</button>
+    <button (click)="pressFunction('square')">x²</button>
+    <button (click)="pressOperator('^')">x^y</button>
+    <button (click)="pressFunction('inverse')">1/x</button>
+
+    <button (click)="pressFunction('sin')">sin</button>
+    <button (click)="pressFunction('cos')">cos</button>
+    <button (click)="pressFunction('tan')">tan</button>
+    <button (click)="pressFunction('sign')">±</button>
+
+    <button (click)="pressFunction('log')">log</button>
+    <button (click)="pressFunction('ln')">ln</button>
+    <button (click)="pressDecimal()">.</button>
+    <button class="clear" (click)="clear()">C</button>
+
+    
+    <button (click)="pressNumber('7')">7</button>
+    <button (click)="pressNumber('8')">8</button>
+    <button (click)="pressNumber('9')">9</button>
+    <button (click)="pressOperator('/')">/</button>
+
+    <button (click)="pressNumber('4')">4</button>
+    <button (click)="pressNumber('5')">5</button>
+    <button (click)="pressNumber('6')">6</button>
+    <button (click)="pressOperator('*')">*</button>
+
+    <button (click)="pressNumber('1')">1</button>
+    <button (click)="pressNumber('2')">2</button>
+    <button (click)="pressNumber('3')">3</button>
+    <button (click)="pressOperator('-')">-</button>
+
+    <button (click)="pressNumber('0')">0</button>
+    <button (click)="pressEquals()">=</button>
+    <button (click)="pressOperator('+')">+</button>
+    <button class="backspace" (click)="backspace()">⌫</button> 
+</div>
+</div>
+  <app-root></app-root>
+</body>
+</html>
